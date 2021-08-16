@@ -1,0 +1,8 @@
+John :	3
+Tina:	3
+Bruce:	5
+Kalle:	0
+Mateusz: 3
+Tantti:	2
+Pontus:	0
+Toni:	3
