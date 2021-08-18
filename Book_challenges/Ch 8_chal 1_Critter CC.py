@@ -10,7 +10,7 @@ class Critter(object):
         
     def __pass_time(self):      # increases critters hunger and boredom levels 
         self.hunger += 1
-        self.boredom = +1 
+        self.boredom += 1 
     
     @property
     def mood(self):         # calculates mood by adding hunger and boredom together 
@@ -31,18 +31,20 @@ class Critter(object):
         
     def eat(self):
         food_amount = int(input("How much food do you want to give? Choose between 1-4: "))
-        while 1 > food_amount > 4:
-            error = input("please enter valid amount: ")
+        while food_amount < 1 or food_amount > 4:
+            food_amount = int(input("please enter valid amount: "))
         print("Brrupp. Thank you.")
-        
         self.hunger -= food_amount
         if self.hunger < 0:
             self.hunger = 0 
         self.__pass_time()
         
-    def play(self, fun = 4):
+    def play(self):
+        play_time = int(input("How long do you want to play? Choose between 1-4 (15min increments): "))
+        while play_time < 1 or play_time > 4:
+            play_time = int(input("please enter valid choice: "))
         print("Wheee!")
-        self.boredom -= fun
+        self.boredom -= play_time
         if self.boredom < 0:
             self.boredom = 0
         self.__pass_time()
